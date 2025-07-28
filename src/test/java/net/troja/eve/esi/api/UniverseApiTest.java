@@ -149,7 +149,7 @@ public class UniverseApiTest extends GeneralApiTest {
     public void getUniverseConstellationsTest() throws ApiException {
         String ifNoneMatch = null;
         List<Integer> response = api.getUniverseConstellations(DATASOURCE, ifNoneMatch);
-        assertThat(response).hasSize(1174);
+        assertThat(response).hasSize(1175);
     }
 
     /**
@@ -304,7 +304,7 @@ public class UniverseApiTest extends GeneralApiTest {
     public void getUniverseRegionsTest() throws ApiException {
         String ifNoneMatch = null;
         List<Integer> response = api.getUniverseRegions(DATASOURCE, ifNoneMatch);
-        assertThat(response).hasSize(112);
+        assertThat(response).hasSize(113);
     }
 
     /**
@@ -441,7 +441,7 @@ public class UniverseApiTest extends GeneralApiTest {
     public void getUniverseSystemsTest() throws ApiException {
         String ifNoneMatch = null;
         List<Integer> response = api.getUniverseSystems(DATASOURCE, ifNoneMatch);
-        assertThat(response).hasSize(8436);
+        assertThat(response).hasSize(8437);
     }
 
     /**
