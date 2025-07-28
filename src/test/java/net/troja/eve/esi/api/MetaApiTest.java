@@ -37,21 +37,6 @@ public class MetaApiTest extends GeneralApiTest {
     }
 
     /**
-     * Debug request headers
-     *
-     * Echo the request headers for debugging purposes. Note that the &#39;Connection&#39; header and any &#39;X-&#39; headers are not included
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getHeadersTest() throws ApiException {
-        Map<String, String> headers = api.getHeaders();
-        assertThat(headers).isNotEmpty();
-        assertThat(headers.get("Accept")).isEqualTo("application/json");
-        assertThat(headers.get("User-Agent")).isEqualTo("eve-esi/slack:@goldengnu");
-    }
-
-    /**
      * Ping route
      *
      * Ping the ESI routers
