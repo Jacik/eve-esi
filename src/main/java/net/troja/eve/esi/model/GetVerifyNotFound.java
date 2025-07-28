@@ -48,7 +48,7 @@ import net.troja.eve.esi.JSON;
 /**
  * Unsupported datasource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class GetVerifyNotFound implements Serializable {
     private static final long serialVersionUID = 1L;
 

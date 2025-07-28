@@ -48,7 +48,7 @@ import net.troja.eve.esi.JSON;
 /**
  * SSO /verify JSON
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class EsiVerifyResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 

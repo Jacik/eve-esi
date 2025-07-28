@@ -76,169 +76,6 @@ public class MetaApi {
     }
 
     /**
-     * Build call for getHeaders
-     * 
-     * @param _callback
-     *            Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException
-     *             If fail to serialize the request body object
-     * @http.response.details <table border="1">
-     *                        <caption>Response Details</caption>
-     *                        <tr>
-     *                        <td>Status Code</td>
-     *                        <td>Description</td>
-     *                        <td>Response Headers</td>
-     *                        </tr>
-     *                        <tr>
-     *                        <td>200</td>
-     *                        <td>Headers OK</td>
-     *                        <td>-</td>
-     *                        </tr>
-     *                        </table>
-     */
-    public okhttp3.Call getHeadersCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {};
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
-            basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/headers/";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = { "application/json" };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {};
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {};
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams,
-                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
-                localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getHeadersValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getHeadersCall(_callback);
-
-    }
-
-    /**
-     * Debug request headers Echo the request headers for debugging purposes.
-     * Note that the &#39;Connection&#39; header and any &#39;X-&#39; headers
-     * are not included
-     * 
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException
-     *             If fail to call the API, e.g. server error or cannot
-     *             deserialize the response body
-     * @http.response.details <table border="1">
-     *                        <caption>Response Details</caption>
-     *                        <tr>
-     *                        <td>Status Code</td>
-     *                        <td>Description</td>
-     *                        <td>Response Headers</td>
-     *                        </tr>
-     *                        <tr>
-     *                        <td>200</td>
-     *                        <td>Headers OK</td>
-     *                        <td>-</td>
-     *                        </tr>
-     *                        </table>
-     */
-    public Map<String, String> getHeaders() throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = getHeadersWithHttpInfo();
-        return localVarResp.getData();
-    }
-
-    /**
-     * Debug request headers Echo the request headers for debugging purposes.
-     * Note that the &#39;Connection&#39; header and any &#39;X-&#39; headers
-     * are not included
-     * 
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException
-     *             If fail to call the API, e.g. server error or cannot
-     *             deserialize the response body
-     * @http.response.details <table border="1">
-     *                        <caption>Response Details</caption>
-     *                        <tr>
-     *                        <td>Status Code</td>
-     *                        <td>Description</td>
-     *                        <td>Response Headers</td>
-     *                        </tr>
-     *                        <tr>
-     *                        <td>200</td>
-     *                        <td>Headers OK</td>
-     *                        <td>-</td>
-     *                        </tr>
-     *                        </table>
-     */
-    public ApiResponse<Map<String, String>> getHeadersWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getHeadersValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, String>>() {
-        }.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Debug request headers (asynchronously) Echo the request headers for
-     * debugging purposes. Note that the &#39;Connection&#39; header and any
-     * &#39;X-&#39; headers are not included
-     * 
-     * @param _callback
-     *            The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException
-     *             If fail to process the API call, e.g. serializing the request
-     *             body object
-     * @http.response.details <table border="1">
-     *                        <caption>Response Details</caption>
-     *                        <tr>
-     *                        <td>Status Code</td>
-     *                        <td>Description</td>
-     *                        <td>Response Headers</td>
-     *                        </tr>
-     *                        <tr>
-     *                        <td>200</td>
-     *                        <td>Headers OK</td>
-     *                        <td>-</td>
-     *                        </tr>
-     *                        </table>
-     */
-    public okhttp3.Call getHeadersAsync(final ApiCallback<Map<String, String>> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getHeadersValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, String>>() {
-        }.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    /**
      * Build call for getPing
      * 
      * @param _callback
@@ -429,7 +266,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public okhttp3.Call getStatusCall(String version, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStatusCall(@javax.annotation.Nullable String version, final ApiCallback _callback)
+            throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {};
@@ -477,7 +315,8 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStatusValidateBeforeCall(String version, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStatusValidateBeforeCall(@javax.annotation.Nullable String version,
+            final ApiCallback _callback) throws ApiException {
         return getStatusCall(version, _callback);
 
     }
@@ -516,7 +355,7 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public List<EsiStatusResponse> getStatus(String version) throws ApiException {
+    public List<EsiStatusResponse> getStatus(@javax.annotation.Nullable String version) throws ApiException {
         ApiResponse<List<EsiStatusResponse>> localVarResp = getStatusWithHttpInfo(version);
         return localVarResp.getData();
     }
@@ -555,7 +394,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public ApiResponse<List<EsiStatusResponse>> getStatusWithHttpInfo(String version) throws ApiException {
+    public ApiResponse<List<EsiStatusResponse>> getStatusWithHttpInfo(@javax.annotation.Nullable String version)
+            throws ApiException {
         okhttp3.Call localVarCall = getStatusValidateBeforeCall(version, null);
         Type localVarReturnType = new TypeToken<List<EsiStatusResponse>>() {
         }.getType();
@@ -598,8 +438,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public okhttp3.Call getStatusAsync(String version, final ApiCallback<List<EsiStatusResponse>> _callback)
-            throws ApiException {
+    public okhttp3.Call getStatusAsync(@javax.annotation.Nullable String version,
+            final ApiCallback<List<EsiStatusResponse>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatusValidateBeforeCall(version, _callback);
         Type localVarReturnType = new TypeToken<List<EsiStatusResponse>>() {
@@ -665,8 +505,10 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public okhttp3.Call getVerifyCall(String userAgent, String xUserAgent, String datasource, String token,
-            String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getVerifyCall(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, @javax.annotation.Nullable String datasource,
+            @javax.annotation.Nullable String token, @javax.annotation.Nullable String authorization,
+            final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {};
@@ -730,8 +572,10 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVerifyValidateBeforeCall(String userAgent, String xUserAgent, String datasource,
-            String token, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getVerifyValidateBeforeCall(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, @javax.annotation.Nullable String datasource,
+            @javax.annotation.Nullable String token, @javax.annotation.Nullable String authorization,
+            final ApiCallback _callback) throws ApiException {
         return getVerifyCall(userAgent, xUserAgent, datasource, token, authorization, _callback);
 
     }
@@ -792,8 +636,10 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public EsiVerifyResponse getVerify(String userAgent, String xUserAgent, String datasource, String token,
-            String authorization) throws ApiException {
+    public EsiVerifyResponse getVerify(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, @javax.annotation.Nullable String datasource,
+            @javax.annotation.Nullable String token, @javax.annotation.Nullable String authorization)
+            throws ApiException {
         ApiResponse<EsiVerifyResponse> localVarResp = getVerifyWithHttpInfo(userAgent, xUserAgent, datasource, token,
                 authorization);
         return localVarResp.getData();
@@ -855,8 +701,10 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public ApiResponse<EsiVerifyResponse> getVerifyWithHttpInfo(String userAgent, String xUserAgent, String datasource,
-            String token, String authorization) throws ApiException {
+    public ApiResponse<EsiVerifyResponse> getVerifyWithHttpInfo(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, @javax.annotation.Nullable String datasource,
+            @javax.annotation.Nullable String token, @javax.annotation.Nullable String authorization)
+            throws ApiException {
         okhttp3.Call localVarCall = getVerifyValidateBeforeCall(userAgent, xUserAgent, datasource, token,
                 authorization, null);
         Type localVarReturnType = new TypeToken<EsiVerifyResponse>() {
@@ -923,8 +771,10 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public okhttp3.Call getVerifyAsync(String userAgent, String xUserAgent, String datasource, String token,
-            String authorization, final ApiCallback<EsiVerifyResponse> _callback) throws ApiException {
+    public okhttp3.Call getVerifyAsync(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, @javax.annotation.Nullable String datasource,
+            @javax.annotation.Nullable String token, @javax.annotation.Nullable String authorization,
+            final ApiCallback<EsiVerifyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getVerifyValidateBeforeCall(userAgent, xUserAgent, datasource, token,
                 authorization, _callback);
@@ -964,8 +814,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public okhttp3.Call getVersionsCall(String userAgent, String xUserAgent, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getVersionsCall(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {};
@@ -1017,8 +867,8 @@ public class MetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVersionsValidateBeforeCall(String userAgent, String xUserAgent, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call getVersionsValidateBeforeCall(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, final ApiCallback _callback) throws ApiException {
         return getVersionsCall(userAgent, xUserAgent, _callback);
 
     }
@@ -1052,7 +902,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public List<String> getVersions(String userAgent, String xUserAgent) throws ApiException {
+    public List<String> getVersions(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent) throws ApiException {
         ApiResponse<List<String>> localVarResp = getVersionsWithHttpInfo(userAgent, xUserAgent);
         return localVarResp.getData();
     }
@@ -1086,7 +937,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public ApiResponse<List<String>> getVersionsWithHttpInfo(String userAgent, String xUserAgent) throws ApiException {
+    public ApiResponse<List<String>> getVersionsWithHttpInfo(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent) throws ApiException {
         okhttp3.Call localVarCall = getVersionsValidateBeforeCall(userAgent, xUserAgent, null);
         Type localVarReturnType = new TypeToken<List<String>>() {
         }.getType();
@@ -1124,7 +976,8 @@ public class MetaApi {
      *                        </tr>
      *                        </table>
      */
-    public okhttp3.Call getVersionsAsync(String userAgent, String xUserAgent, final ApiCallback<List<String>> _callback)
+    public okhttp3.Call getVersionsAsync(@javax.annotation.Nullable String userAgent,
+            @javax.annotation.Nullable String xUserAgent, final ApiCallback<List<String>> _callback)
             throws ApiException {
 
         okhttp3.Call localVarCall = getVersionsValidateBeforeCall(userAgent, xUserAgent, _callback);

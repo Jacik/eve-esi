@@ -50,7 +50,7 @@ import net.troja.eve.esi.JSON;
 /**
  * Per route status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class EsiStatusResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
